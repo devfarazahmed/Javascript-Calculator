@@ -1,0 +1,115 @@
+body{
+	background: #232323;
+	font-family:verdana;
+}
+.calculator{
+	
+/* background:gray; */
+}
+
+.screen{
+	background: #323232;
+	color:white;
+	height:100px;
+	margin-top: 8px;
+	text-align:right;
+}
+
+.screen .history{
+	height: 40px;
+	font-size: 1.65em;
+	color: #c8c8c7;	
+	padding:4px;
+}
+.screen .current{
+	padding:4px;
+	height: 61px;
+	font-size: 2.25em;
+}
+.panel{
+	border:none;
+}
+.panel-body {
+    background: #232323;
+    padding-top: 0px;
+}
+
+.panel-default>.panel-heading {
+    color: #3F51B5;
+    background-color: #232323;
+    border: none;
+    /* padding: 14px; */
+    padding-bottom: 0px;
+}
+.nav-tabs {
+     border:none;
+     /* padding-bottom: 0px; */
+}
+
+
+.nav-tabs>li { 
+     margin-bottom: 0px; 
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.nav-tabs > li > a { border: none; color: #666; }
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover {border: none;color: #4285F4 !important;background: transparent;border-radius: 0px;}
+
+.nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+
+.nav-tabs > li.active > a , .nav-tabs > li.hover> a ,.nav-tabs > li.focus> a { background: transparent !important;}
+
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane {padding: 0px;}
+.tab-content{padding-top: 0px;}
+
+
+
+
+
+
+button{
+	border-radius: 0px !important;
+	width:100%;
+	font-size:1.5em !important;	
+	
+	padding:.5em !important;
+	background-color: #323232;
+	color: #c8c8c8;
+}
+  
+.btn:hover, .btn:active, .btn:focus{
+	color:#ffffff;	
+}
+
+td{border-color:transparent !important;}
+
+.col1{
+	/* margin-right:1px; */
+}
+
+table tr {	
+	margin:0;
+}
+table td {	
+	margin:0;
+}
+.col1{
+	padding-left: 1px !important;
+	padding-right: 7px !important;
+}
+.colOther{
+	padding-left: 2px !important;
+	padding-right: 2px !important;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+     padding: 2px;
+}
+
+.controls {
+    margin-top: 8px;
+}
+.equals{
+	background:green;
+}

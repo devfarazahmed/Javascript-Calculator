@@ -1,0 +1,119 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 
+<div class="container">
+	<div class="row">    
+        <br>
+		<div class="col-md-8">
+		<div class="panel with-nav-tabs panel-default">
+			<div class="panel-heading">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#tabSimple" data-toggle="tab">Simple</a></li>
+					<li><a href="#tabScientific" data-toggle="tab">Scientific</a></li>
+					<li><a href="#tabConverter" data-toggle="tab">Converter</a></li>					
+				</ul>
+			</div>
+			<div class="panel-body">
+				<div class="tab-content">
+					<!-- Simple Calculator-->
+					<div class="tab-pane fade in active" id="tabSimple">
+							
+								<div class="calculator center-block" style="float:none"> 
+									<div class="screen">
+										<p class="history"></p>
+										<p class="current"></p>
+									</div>	
+									<div class="controls">
+										<table class="table"> 
+											<tr>
+												<td class="col1 col-md-2"><button  value="m" class="btn functions">M</button></td>
+												<td class="colOther col-md-2"><button value="ce" class="btn functions">CE</button></td>
+												<td class="colOther col-md-2"><button value="c" class="btn functions">C</button></td>
+												<td class="colOther col-md-2"><button value="-x"  class="btn functions">-X</button></td>
+												<td class="colOther col-md-2"><button value="/"  class="btn operations">/</button></td>												
+											</tr>										
+											<tr>
+												<td class="col1 col-md-2">    <button value="+/-" class="btn numbers">+/-</button></td>
+												<td class="colOther col-md-2"><button value="7" class="btn numbers">7</button></td>
+												<td class="colOther col-md-2"><button value="8" class="btn numbers">8</button></td>
+												<td class="colOther col-md-2"><button value="9" class="btn numbers">9</button></td>
+												<td class="colOther col-md-2"><button value="*"  class="btn operations">x</button></td>												
+											</tr>										
+											<tr>
+												<td class="col1 col-md-2">	  <button value="root" class="btn numbers"> &radic;</button></td>
+												<td class="colOther col-md-2"><button value="4" class="btn numbers">4</button></td>
+												<td class="colOther col-md-2"><button value="5" class="btn numbers">5</button></td>
+												<td class="colOther col-md-2"><button value="6" class="btn numbers">6</button></td>
+												<td class="colOther col-md-2"><button value="-" class="btn operations">-</button></td>												
+											</tr>										
+											<tr>
+												<td class="col1 col-md-2">	  <button value="%" class="btn numbers">%</button></td>
+												<td class="colOther col-md-2"><button value="1" class="btn numbers">1</button></td>
+												<td class="colOther col-md-2"><button value="2" class="btn numbers">2</button></td>
+												<td class="colOther col-md-2"><button value="3" class="btn numbers">3</button></td>
+												<td class="colOther col-md-2"><button value="+" class="btn operations">+</button></td>												
+											</tr>										
+											<tr>
+												<td class="col1 col-md-2">	   			  <button  value="inverse" class="btn numbers">1/x</button></td>
+												<td class="colOther col-md-2" colspan="2"><button  value="0" class="btn numbers">0</button></td>
+												<td class="colOther col-md-2">			  <button  value="." class="btn numbers">.</button></td>
+												<td class="colOther col-md-2">			  <button  value="=" class="btn equals">=</button></td>												
+											</tr>																					
+								
+										</table>
+										
+									</div>	
+									
+								</div>							
+							
+					</div>                     
+					<!-- //- Simple Calculator-->				
+          
+					<div class="tab-pane fade" id="tabScientific">Scientific</div>
+					<div class="tab-pane fade" id="tabConverter">Converter</div>					
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+    
+
+	<script>
+	
+	
+	 $(document).ready(function(){
+   
+		   $(".calculator button").on("click",function(){
+				if(this.value == "c"){
+					$(".screen .current").text("");				
+				}
+				else if(this.value == "="){
+					$(".screen .history").text( $(".screen .current").text() );				
+					$(".screen .current").text( eval( $(".screen .current").text().replace("sqrt","Math.sqrt") ) );				
+					
+				}
+				else if(this.value == "-x"){
+					$(".screen .current").text( $(".screen .current").text().substr(0, $(".screen .current").text().length-1));				
+				}
+				else if(this.value == "root"){
+					$(".screen .current").text( "sqrt(" + $(".screen .current").text() + ")");				
+				}
+				else{
+					$(".screen .current").append(this.value);
+				}
+				
+		   })
+		 });
+	
+	
+	
+	</script>
